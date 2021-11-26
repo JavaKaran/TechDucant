@@ -7,16 +7,19 @@ const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const path = require("path");
+const cors = require("cors");
 
 const app = express();
 dotenv.config();
 app.use(express.json());
-app.use("/images", express.static(path.join(_dirname, "/images")));
+app.use(cors());
+app.use("/images", express.static(path.join(__dirname, "/images")));
 
 mongoose
     .connect(process.env.MONGO_URL, {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex: true
     })
     .then(console.log("Connected to MongoDB"))
     .catch((err) => console.log(err));
@@ -42,5 +45,5 @@ app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
 app.listen(process.env.PORT, () => {
-    console.log(`Backend is running on localhost:${PORT}`);
+    console.log(`Backend is running on localhost:${process.env.PORT}`);
 });

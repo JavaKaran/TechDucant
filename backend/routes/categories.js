@@ -1,4 +1,4 @@
-const router = require("expres").Router();
+const router = require("express").Router();
 const categories = require("../models/Category");
 
 router.post("/", async (req, res) => {
