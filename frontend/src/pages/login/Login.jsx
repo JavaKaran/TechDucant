@@ -11,14 +11,14 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        dispatch({ type: "LOGIN_START"});
+        dispatch({ type: "LOGIN_START" });
         try {
             const res = await axios.post("/auth/login", {
                 username: userRef.current.value,
                 password: passwordRef.current.value,
             });
             dispatch({ type: "LOGIN_SUCESS", payload: res.data });
-        } catch(err) {
+        } catch (err) {
             dispatch({ type: "LOGIN_FAILURE" });
         }
     };
@@ -28,11 +28,18 @@ const Login = () => {
             <span className="loginTitle">Login</span>
             <form className="loginForm" onSubmit={handleSubmit}>
                 <label>Username</label>
-                <input 
+                <input
                     type="text"
                     className="loginInput"
                     placeholder="Enter your username"
                     ref={userRef}
+                />
+                <label>Password</label>
+                <input
+                    type="password"
+                    className="loginInput"
+                    placeholder="Enter your password..."
+                    ref={passwordRef}
                 />
                 <button className="loginButton" type="submit" disabled={isFetching}>
                     Login

@@ -31,23 +31,25 @@ const Register = () => {
                 <label>Username</label>
                 <input
                     type="text"
-                    classname="registerInput"
-                    placeholder="Enter your username"
+                    className="registerInput"
+                    placeholder="Enter your username..."
                     onChange={(e) => setUsername(e.target.value)}
                 />
+                <label>Email</label>
                 <input
                     type="text"
-                    classname="registerInput"
-                    placeholder="Enter your email"
+                    className="registerInput"
+                    placeholder="Enter your email..."
                     onChange={(e) => setEmail(e.target.value)}
                 />
+                <label>Password</label>
                 <input
-                    type="text"
-                    classname="registerInput"
-                    placeholder="Enter your password"
+                    type="password"
+                    className="registerInput"
+                    placeholder="Enter your password..."
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button classname="registerButton" type="submit">
+                <button className="registerButton" type="submit">
                     Register
                 </button>
             </form>
@@ -56,7 +58,7 @@ const Register = () => {
                     Login
                 </Link>
             </button>
-            {error && <span style={{color: "red", marginTop: "10px"}}>Something went wrong</span>}
+            {error && <span style={{ color: "red", marginTop: "10px" }}>Something went wrong</span>}
         </div>
     );
 };

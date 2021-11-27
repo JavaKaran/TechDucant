@@ -4,7 +4,7 @@
   "description": "An application to write blogs ",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon backend/index.js"
+    "start": "nodemon index.js"
   },
   "author": "Karan Sharma",
   "license": "ISC",

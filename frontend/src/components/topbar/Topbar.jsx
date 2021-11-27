@@ -4,11 +4,11 @@ import { Context } from "../../context/Context";
 import "./topbar.css"
 
 const Topbar = () => {
-    const { user, dsipatch } = useContext(Context);
+    const { user, dispatch } = useContext(Context);
     const PF = "http://localhost:5000/images/";
 
     const handleLogout = () => {
-        dispatchEvent({ type: "LOGOUT" });
+        dispatch({ type: "LOGOUT" });
     };
 
     return (
@@ -66,4 +66,4 @@ const Topbar = () => {
     );
 };
 
-export const Topbar;
+export default Topbar;

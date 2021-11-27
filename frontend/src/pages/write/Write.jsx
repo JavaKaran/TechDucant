@@ -15,10 +15,9 @@ const Write = () => {
             username: user.username,
             title,
             desc,
-            photo,
         };
         if(file) {
-            const data = newFormData();
+            const data = new FormData();
             const filename = Date.now() + file.name;
             data.append("name", filename);
             data.append("file", file);

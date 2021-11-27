@@ -1,4 +1,4 @@
-import { Sidebar } from "../../components/sidebar/Sidebar";
+import Sidebar from "../../components/sidebar/Sidebar";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
@@ -14,15 +14,14 @@ const Settings = () => {
     const {user, dispatch} = useContext(Context);
     const PF = "http://localhost:5000/images/";
 
-    const handleSubit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch({ type: "UPDATE_START" });
         const updatedUser = {
             userId: user._id,
             username,
             email,
-            password,
-            profilePic,
+            password
         };
         if(file) {
             const data = new FormData();
