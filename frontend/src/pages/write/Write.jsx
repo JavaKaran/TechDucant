@@ -8,6 +8,7 @@ const Write = () => {
     const [desc, setDesc] = useState("");
     const [file, setFile] = useState(null);
     const { user } = useContext(Context);
+    const link = "http://localhost:5000/api";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -23,13 +24,13 @@ const Write = () => {
             data.append("file", file);
             newPost.photo = filename;
             try {
-                await axios.post("/upload", data);
+                await axios.post(`${link}/upload`, data);
             } catch(err) {}
         }
 
         try {
-            const res = await axios.post("/posts", newPost);
-            window.location.replace("/post/" + res.data._id);
+            const res = await axios.post(`${link}/posts`, newPost);
+            window.location.replace(`/post/` + res.data._id);
         } catch(err) {}
     };
 

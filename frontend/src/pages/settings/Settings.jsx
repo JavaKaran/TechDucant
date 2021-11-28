@@ -14,6 +14,8 @@ const Settings = () => {
     const {user, dispatch} = useContext(Context);
     const PF = "http://localhost:5000/images/";
 
+    const URL = "http://localhost:5000/api";
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch({ type: "UPDATE_START" });
@@ -30,11 +32,11 @@ const Settings = () => {
             data.append("file", file);
             updatedUser.profilePic = filename;
             try {
-                await axios.post("/upload", data);
+                await axios.post(`${URL}/upload`, data);
             } catch (err) {}
         }
         try {
-            const res = await axios.put("/user/" + user._id, updatedUser);
+            const res = await axios.put(`${URL}/user/` + user._id, updatedUser);
             setSuccess(true);
             dispatch({ type: "UPDATE_SUCCESS", payload: res.data});
         } catch (err) {

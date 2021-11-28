@@ -14,10 +14,11 @@ const SinglePost = () => {
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
     const [updateMode, setUpdateMode] = useState(false);
+    const URL = "http://localhost:5000/api"
 
     useEffect(() => {
         const getPost = async () => {
-            const res = await axios.get("/posts/" + path);
+            const res = await axios.get(`${URL}/posts/` + path);
             setPost(res.data);
             setTitle(res.data);
             setDesc(res.data);
@@ -27,7 +28,7 @@ const SinglePost = () => {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`/posts/${post._id}`, {
+            await axios.delete(`${URL}/posts/${post._id}`, {
                 data: {
                     username: user.username
                 },
@@ -38,7 +39,7 @@ const SinglePost = () => {
 
     const handleUpdate = async () => {
         try {
-            await axios.put(`/posts/${post._id}`, {
+            await axios.put(`${URL}/posts/${post._id}`, {
                 username: user.username,
                 title,
                 desc,

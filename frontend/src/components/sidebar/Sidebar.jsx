@@ -5,10 +5,11 @@ import "./sidebar.css";
 
 const Sidebar = () => {
     const [cats, setCats] = useState([]);
+    const URL = "http://localhost:5000/api"
 
     useEffect(() => {
         const getCats = async () => {
-            const res = await axios.get("/categories");
+            const res = await axios.get(`${URL}/categories`);
             setCats(res.data);
         };
         getCats();
