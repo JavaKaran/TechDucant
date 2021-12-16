@@ -16,7 +16,7 @@ const Topbar = () => {
             <div className="topLeft">
                 <i className="topIcon fab fa-facebook-square"></i>
                 <i className="topIcon fab fa-twitter-square"></i>
-                <i className="topIcon fab fa-pinterest-square"></i>
+                {/* <i className="topIcon fab fa-pinterest-square"></i> */}
                 <i className="topIcon fab fa-instagram-square"></i>
             </div>
             <div className="topCenter">
@@ -60,7 +60,7 @@ const Topbar = () => {
                         </li>
                     </ul>
                 )}
-                <i className="topSearchIcon fas fa-search"></i>
+                {/* <i className="topSearchIcon fas fa-search"></i> */}
             </div>
         </div>
     );

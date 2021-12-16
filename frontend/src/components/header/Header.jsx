@@ -4,11 +4,11 @@ const Header = () => {
     return(
         <div className="header">
             <div className="headerTitles">
-                <span className="headerTitleSm">Tech Ducant</span>
-                <span className="headerTitleLg">Blog</span>
+                <span className="headerTitleLg">TechDucant</span>
+                {/* <span className="headerTitleSm">Blog</span> */}
             </div>
             <img className="headerImg"
-                 src="https://images.pexels.com/photos/1167355/pexels-photo-1167355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                 src="https://cdn.pixabay.com/photo/2017/10/10/21/47/laptop-2838921_960_720.jpg"
                  alt=""
             />     
         </div>

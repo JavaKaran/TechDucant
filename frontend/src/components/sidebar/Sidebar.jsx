@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./sidebar.css";
 
 const Sidebar = () => {
@@ -20,14 +20,15 @@ const Sidebar = () => {
             <div className="sidebarItem">
                 <span className="sidebarTitle">ABOUT ME</span>
                 <img
-                    src="https://i.pinimg.com/236x/1e/3f/58/1e3f587572a7a7b20bbf1828595a1786--holiday-party-themes-holiday-gift-guide.jpg"
+                    className="sidebarImage"
+                    src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg"
                     alt=""
                 />
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi officiis cumque vero, porro neque quis minus voluptatum quidem maxime nobis omnis officia, soluta rem! Aspernatur est inventore eum iusto sunt.
+                    Welcome, TechDucant is an application for all tech enthusiasts to write blogs of their interest and learn from other. Hope you enjoy!! 
                 </p>
             </div>
-            <div className="sidebarItem">
+            {/* <div className="sidebarItem">
                 <span className="sidebarTitle">CATEGORIES</span>
                 <ul className="sidebarList">
                     {cats.map((c) => (
@@ -36,13 +37,13 @@ const Sidebar = () => {
                         </Link>
                     ))}
                 </ul>
-            </div>
+            </div> */}
             <div className="sidebarItem">
                 <span className="sidebarTitle">FOLLOW US</span>
                 <div className="sidebarSocial">
                     <i className="sidebarIcon fab fa-facebook-square"></i>
                     <i className="sidebarIcon fab fa-twitter-square"></i>
-                    <i className="sidebarIcon fab fa-pinterest-square"></i>
+                    {/* <i className="sidebarIcon fab fa-pinterest-square"></i> */}
                     <i className="sidebarIcon fab fa-instagram-square"></i>
                 </div>
             </div>

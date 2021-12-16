@@ -29,6 +29,12 @@
     text-align: center;
 }
 
+.sidebarImage {
+    height: 20vh;
+    width: 30vh;
+ 
+}
+
 .sidebarItem > img {
     margin-top: 15px;
 }

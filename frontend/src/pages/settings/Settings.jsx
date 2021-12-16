@@ -12,7 +12,7 @@ const Settings = () => {
     const [success, setSuccess] = useState(false);
 
     const {user, dispatch} = useContext(Context);
-    const PF = "http://localhost:5000/images/";
+    const PF = "http://localhost:5000/images";
 
     const URL = "http://localhost:5000/api";
 
@@ -55,7 +55,7 @@ const Settings = () => {
                     <label>Profile Picture</label>
                     <div className="settingsPP">
                         <img 
-                            src={file ? URL.createObjectURL(file) : PF+user.profilePic}
+                            src={file ? URL.createObjectURL(file) : PF + user.profilePic}
                             alt=""
                         />
                         <label htmlFor="fileInput">

@@ -17,9 +17,11 @@
 }
 
 .headerTitleLg {
+    color: #444;
+    font-weight: 700;
     position: absolute;
-    top: 20%;
-    font-size: 100px;
+    top: 10%;
+    font-size: 80px;
 }
 
 .headerImg {
