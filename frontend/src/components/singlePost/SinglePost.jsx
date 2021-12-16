@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import {Link}from "react-router-dom";
 import { Context } from "../../context/Context";
 import axios from 'axios';
 import "./singlePost.css";
 
 const SinglePost = () => {
-    const location = useLocation();
-    const path = location.pathname.split("/")[2];
+    const { pathname } = useLocation();
+    const path = pathname.split("/")[2];
     const [post, setPost] = useState({});
     const PF = "http://localhost:5000/images/";
     const { user } = useContext(Context);
@@ -20,8 +20,8 @@ const SinglePost = () => {
         const getPost = async () => {
             const res = await axios.get(`${URL}/posts/` + path);
             setPost(res.data);
-            setTitle(res.data);
-            setDesc(res.data);
+            setTitle(res.data.title);
+            setDesc(res.data.desc);
         };
         getPost();
     }, [path]);
