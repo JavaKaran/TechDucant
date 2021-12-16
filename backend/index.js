@@ -25,7 +25,7 @@ mongoose
     .catch((err) => console.log(err));
 
 const storage = multer.diskStorage({
-    destinations: (req, file, cb) => {
+    destination: (req, file, cb) => {
         cb(null, "images");
     },
     filename: (req, file, cb) => {
