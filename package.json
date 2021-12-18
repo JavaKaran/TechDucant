@@ -4,7 +4,11 @@
   "description": "An application to write blogs ",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "build": "cd client && npm run build",
+    "server": "nodemon index.js",
+    "install-client": "cd client && npm install",
+    "start": "node index.js"
   },
   "author": "Karan Sharma",
   "license": "ISC",
