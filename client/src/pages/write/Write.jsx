@@ -10,7 +10,6 @@ const Write = () => {
     const [photo] = useState("default_post.jpg")
     const [categories, setCategories] = useState([]);
     const { user } = useContext(Context);
-    const link = "http://localhost:5000";
 
     const capitalizeFirstLetter = (string) =>
     string.charAt(0).toUpperCase() + string.slice(1);
@@ -31,12 +30,12 @@ const Write = () => {
             data.append("file", file);
             newPost.photo = filename;
             try {
-                await axios.post(`${link}/api/upload`, data);
+                await axios.post(`/api/upload`, data);
             } catch(err) {}
         }
 
         try {
-            const res = await axios.post(`${link}/api/posts`, newPost);
+            const res = await axios.post(`/api/posts`, newPost);
             window.location.replace(`/post/` + res.data._id);
         } catch(err) {}
     };

@@ -14,8 +14,6 @@ const Settings = () => {
 
     const PF = "http://localhost:5000/images/";
 
-    const link = "http://localhost:5000";
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch({ type: "UPDATE_START" });
@@ -32,11 +30,11 @@ const Settings = () => {
             data.append("file", file);
             updatedUser.profilePic = filename;
             try {
-                await axios.post(`${link}/api/upload`, data);
+                await axios.post(`/api/upload`, data);
             } catch (err) {}
         }
         try {
-            const res = await axios.put(`${link}/api/users/` + user._id, updatedUser);
+            const res = await axios.put(`/api/users/` + user._id, updatedUser);
             setSuccess(true);
             dispatch({ type: "UPDATE_SUCCESS", payload: res.data});
             res.data && window.location.replace("/");

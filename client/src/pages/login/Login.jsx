@@ -8,13 +8,12 @@ const Login = () => {
     const userRef = useRef();
     const passwordRef = useRef();
     const { dispatch, isFetching } = useContext(Context);
-    const link = "http://localhost:5000";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch({ type: "LOGIN_START" });
         try {
-            const res = await axios.post(`${link}/api/auth/login`, {
+            const res = await axios.post(`/api/auth/login`, {
                 username: userRef.current.value,
                 password: passwordRef.current.value,
             });

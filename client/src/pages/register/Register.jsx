@@ -9,13 +9,12 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [profilePic] = useState("default.jpg")
     const [error, setError] = useState(false);
-    const link = "http://localhost:5000";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(false);
         try {
-            const res = await axios.post(`${link}/api/auth/register`, {
+            const res = await axios.post(`/api/auth/register`, {
                 username,
                 email,
                 password,
