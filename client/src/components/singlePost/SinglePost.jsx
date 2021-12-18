@@ -64,10 +64,10 @@ const SinglePost = () => {
                 ) : (
                     <h1 className="singlePostTitle">
                         {title}
-                        {post.username === user.username && (
+                        {post.username === user?.username && (
                             <div className="singlePostEdit">
                                 <i 
-                                    className="singlePostIcon far fa-trash-alt"
+                                    className="singlePostIcon far fa-edit"
                                     onClick={() => setUpdateMode(true)}
                                 ></i>
                                 <i
