@@ -12,7 +12,7 @@ const Settings = () => {
     const [password, setPassword] = useState(user.password);
     const [success, setSuccess] = useState(false);
 
-    const PF = "http://localhost:5000/images/";
+    const PF = "/images/";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -54,7 +54,7 @@ const Settings = () => {
                     <label>Profile Picture</label>
                     <div className="settingsPP">
                         <img 
-                            src={file ? URL.createObjectURL(file) : `${PF}` + user.profilePic}
+                            src={file ? URL.createObjectURL(file) : PF + user.profilePic}
                             alt=""
                         />
                         <label htmlFor="fileInput">
