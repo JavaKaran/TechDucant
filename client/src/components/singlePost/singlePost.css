@@ -29,12 +29,13 @@
     font-size: 28px;
     text-align: center;
     border: none;
-    color: gray;
-    border-bottom: 1px solid lightgray;
+    color: black;
+    border: none;
 }
 
 .singlePostTitleInput:focus {
     outline: none;
+    border-bottom: 1px solid lightgray;
 }
 
 .singlePostEdit {
@@ -55,6 +56,35 @@
     color: tomato;
 }
 
+.singlePostCategory {
+    padding-top: 30px; 
+    font-family: "Lora", serif;
+    font-size: 22px;
+}
+
+.singlePostCategoryInput {
+    font-family: "Lora", serif;
+    font-size: 15px;
+    border: none;
+    color: #b39656;;
+    border: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.singlePostCategoryInput:focus {
+    outline: none;
+    border-bottom: 1px solid lightgray;
+}
+
+.singleCat {
+        font-family: "Varela Round", sans-serif;
+        font-size: 15px;
+        color: #be9656;
+        line-height: 20px;
+        margin-top: 15px;
+        margin-right: 7px;
+}
 .singlePostInfo {
     margin-bottom: 20px;
     display: flex;
@@ -72,7 +102,7 @@
 
 .singlePostDesc::first-letter{
     margin-left: 20px;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 600;
 }
 
@@ -85,6 +115,7 @@
 
 .singlePostDescInput:focus {
     outline: none;
+    border: 1px solid lightgray;
 }
 
 .singlePostButton {

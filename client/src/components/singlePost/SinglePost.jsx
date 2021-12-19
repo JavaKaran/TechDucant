@@ -13,6 +13,7 @@ const SinglePost = () => {
     const { user } = useContext(Context);
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
+    const [categories, setCategories] = useState([]);
     const [updateMode, setUpdateMode] = useState(false);
 
     useEffect(() => {
@@ -21,9 +22,13 @@ const SinglePost = () => {
             setPost(res.data);
             setTitle(res.data.title);
             setDesc(res.data.desc);
+            setCategories(res.data.categories);
         };
         getPost();
     }, [path]);
+
+    const capitalizeFirstLetter = (string) =>
+    string.charAt(0).toUpperCase() + string.slice(1);
 
     const handleDelete = async () => {
         try {
@@ -42,6 +47,7 @@ const SinglePost = () => {
                 username: user.username,
                 title,
                 desc,
+                categories
             });
             setUpdateMode(false)
         } catch(err) {}
@@ -97,6 +103,30 @@ const SinglePost = () => {
                     />
                 ) : (
                     <p className="singlePostDesc">{desc}</p>
+                )}
+                {updateMode ? (
+                    <input
+                        type="text"
+                        className="singlePostCategoryInput"
+                        value={categories}
+                        onChange={(e) =>
+                            setCategories(
+                                e.target.value
+                                .split(",")
+                                .map((item) => capitalizeFirstLetter(item.trim()))
+                        )
+                    }
+                />
+                ) : (
+                    <div className="singlePostCategory">
+                        {categories.map((c,i) => (
+                            <span key={i} className="singleCat">
+                            <Link to={`/?cat=${c}`} className="link">
+                                {c}
+                            </Link>
+                        </span>
+                        ))}
+            </div>
                 )}
                 {updateMode && (
                     <button className="singlePostButton" onClick={handleUpdate}>
